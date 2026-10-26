@@ -4,7 +4,7 @@
   "last_modified_by": "Dhruba Poudel",
   "release": "1.0.0",
   "date": "2026-10-27",
-  "status": "LOCAL_RELEASE_GATES_PASSED_HOSTED_VERIFICATION_PENDING",
+  "status": "RELEASED_AND_HOSTED_VERIFIED",
   "standalone_php": {
     "runtime": "8.5.12",
     "checks": 31,
@@ -92,5 +92,41 @@
     "Public PHP demo is separate from WordPress; theme link is a static preview.",
     "No durable webhook ledger, order application or payment processing.",
     "No exhaustive security/accessibility certification, production qualification, all database/HPOS combinations or WordPress.org directory approval."
-  ]
+  ],
+  "hosted": {
+    "url": "https://about.dhrub.com.np/commerce/",
+    "theme_preview": "https://about.dhrub.com.np/commerce/theme/preview/",
+    "case_study": "https://about.dhrub.com.np/cases/commerce-reconcile.html",
+    "hosting_php_family": "8.3 (read from Hostinger; unchanged)",
+    "scenarios": {
+      "baseline": "9 orders /14 events /3 matched /9 exceptions /2 ignored",
+      "corrected": "9/14/7/5/2",
+      "replay": "9/3/0/0/3",
+      "conflict": "9/4/2/2/0"
+    },
+    "baseline_report_sha256": "f778c64d0541de0819a75943446aaa1a3de779eec274df32c1b09e70482879b9",
+    "native_browser_downloads": [
+      {
+        "file": "commerce-reconcile-plugin.zip",
+        "bytes": 21095,
+        "sha256": "f7269651250a6c7c7b339dedf5dc9ace67dc8ddd023dc9af922c71ab0a29fa97"
+      },
+      {
+        "file": "commerce-canvas-theme.zip",
+        "bytes": 214274,
+        "sha256": "f551278233a6668619e1a57f3dee00aa910c3137fcd5e362d7fcf5e2a6bbc30d"
+      }
+    ],
+    "download_verification": "Both hosted ZIPs matched the reviewed local release manifest byte count and SHA-256."
+  },
+  "hosted_ci": {
+    "url": "https://github.com/dhrubasuz/commerce-reconcile/actions/runs/40412803347",
+    "commit": "3deeb369c83701e3e6fc745a28a8501bb8b9ec57",
+    "status": "SUCCESS",
+    "jobs": [
+      "PHP 8.1",
+      "PHP 8.5",
+      "Node interface/theme/package checks"
+    ]
+  }
 }
