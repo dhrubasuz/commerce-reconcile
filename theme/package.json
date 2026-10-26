@@ -1,0 +1,19 @@
+{
+  "name": "commerce-canvas-theme-checks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development-only interaction checks for the original Commerce Canvas WordPress theme.",
+  "author": "Dhruba Poudel",
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test tests/interaction.test.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "30.1.3"
+  }
+}

@@ -1,0 +1,10 @@
+/* Author: Dhruba Poudel. Local WordPress admin presentation. */
+.cr-admin { max-width: 1100px; }
+.cr-kicker { color: #007d79; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.cr-admin h1 { max-width: 720px; line-height: 1.25; margin-bottom: 16px; }
+.cr-admin > p { max-width: 880px; line-height: 1.7; }
+.cr-admin textarea { margin-top: 12px; border-radius: 5px; }
+.cr-summary-item { display: inline-block; background: #eef4f2; border: 1px solid #c8dcd5; border-radius: 5px; margin: 0 8px 8px 0; padding: 8px 12px; }
+.cr-table-wrap { overflow-x: auto; }
+#cr-hash { overflow-wrap: anywhere; }
+#cr-status { font-weight: 600; min-height: 24px; }

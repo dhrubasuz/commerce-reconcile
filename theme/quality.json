@@ -1,0 +1,13 @@
+{
+  "author": "Dhruba Poudel",
+  "creator": "Dhruba Poudel",
+  "last_modified_by": "Dhruba Poudel",
+  "static_pages": 2,
+  "local_references": 42,
+  "original_svg_assets": 9,
+  "php_files_linted": 12,
+  "fixture_alignment": "SIX_PHP_FIXTURES_MATCH_STATIC_PREVIEW",
+  "wordpress_runtime": "SEPARATE_INTEGRATION_RECORD",
+  "browser_layout": "SEPARATE_BROWSER_RECORD",
+  "status": "STATIC_CHECKS_PASSED"
+}

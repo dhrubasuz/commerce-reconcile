@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Dhruba Poudel" />
+    <meta name="creator" content="Dhruba Poudel" />
+    <meta name="last-modified-by" content="Dhruba Poudel" />
+    <meta
+      name="description"
+      content="Commerce Reconcile by Dhruba Poudel. Explore an original WordPress plugin's PHP reconciliation engine, a custom theme and a fictional brand system."
+    />
+    <meta name="theme-color" content="#193c32" />
+    <title>Commerce Reconcile — Dhruba Poudel</title>
+    <link rel="stylesheet" href="showcase.css" />
+    <script src="showcase.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#workspace">Skip to review workspace</a>
+    <header class="masthead">
+      <a class="product-brand" href="./"
+        ><span class="mark" aria-hidden="true"><i></i><i></i></span
+        ><span>Commerce<span class="brand-light">Reconcile</span></span></a
+      >
+      <nav aria-label="Showcase navigation">
+        <a class="current" href="#workspace">Reconciliation</a
+        ><a href="theme/preview/">Theme &amp; branding <span aria-hidden="true">↗</span></a
+        ><a href="#engineering">Engineering</a>
+      </nav>
+      <a class="portfolio-link" href="https://about.dhrub.com.np/"
+        >Dhruba Poudel <span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">An original WordPress + WooCommerce engineering showcase</p>
+          <h1>Every event has a story.<br /><em>Make the differences clear.</em></h1>
+          <p class="intro-copy">
+            Compare incoming commerce records with an order snapshot. Inspect mismatches, duplicate
+            deliveries and conflicting events before a workflow acts on them.
+          </p>
+        </div>
+        <aside class="intro-note">
+          <span class="mini-label">Designed &amp; developed by</span><strong>Dhruba Poudel</strong>
+          <p>PHP domain logic.<br />WordPress integration.<br />Interface &amp; brand design.</p>
+          <a
+            href="https://github.com/dhrubasuz/commerce-reconcile"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Inspect the source ↗</a
+          >
+        </aside>
+      </section>
+      <div class="scope-banner">
+        <span class="scope-dot" aria-hidden="true"></span
+        ><strong>Fictional data. Read-only review.</strong
+        ><span
+          >The PHP engine runs here independently of WordPress. No live store or payment service is
+          connected.</span
+        >
+      </div>
+      <section class="workspace" id="workspace" aria-labelledby="workspace-title">
+        <div class="workspace-heading">
+          <div>
+            <p class="eyebrow">01 / Review workspace</p>
+            <h2 id="workspace-title">See what changed.<br />Understand why.</h2>
+          </div>
+          <div class="scenario-controls">
+            <label for="scenario">Explore a scenario</label>
+            <div>
+              <select id="scenario">
+                <option value="baseline">01 · A mixed incoming feed</option>
+                <option value="corrected">02 · Correct four field mismatches</option>
+                <option value="replay">03 · Replay three exact matches</option>
+                <option value="conflict">04 · Same ID, changed payload</option></select
+              ><button id="run" type="button">Run review <span aria-hidden="true">↻</span></button>
+            </div>
+          </div>
+        </div>
+        <p class="scenario-explanation" id="scenario-explanation">
+          Preparing the fictional snapshot…
+        </p>
+        <div id="status" class="run-status" role="status" aria-live="polite">
+          Loading the PHP review…
+        </div>
+        <div class="error-panel" id="error-panel" hidden>
+          <h3>The review is unavailable.</h3>
+          <p id="error-message"></p>
+          <button id="retry" type="button">Try again</button>
+        </div>
+        <div id="review-results" aria-busy="true">
+          <div class="metrics" aria-label="Review summary">
+            <div>
+              <span>Source orders</span><strong data-metric="orders">—</strong
+              ><small>Immutable snapshot</small>
+            </div>
+            <div>
+              <span>Incoming events</span><strong data-metric="events">—</strong
+              ><small>Rows, including duplicates</small>
+            </div>
+            <div class="metric-good">
+              <span>Matched</span><strong data-metric="matched">—</strong
+              ><small>Exact field agreement</small>
+            </div>
+            <div class="metric-review">
+              <span>Needs review</span><strong data-metric="exceptions">—</strong
+              ><small>Exception rows</small>
+            </div>
+            <div>
+              <span>Ignored</span><strong data-metric="ignored">—</strong
+              ><small>Explained, never hidden</small>
+            </div>
+          </div>
+          <div class="review-grid">
+            <div class="register-panel">
+              <div class="register-heading">
+                <div>
+                  <h3>Event register</h3>
+                  <p id="register-count">Waiting for results</p>
+                </div>
+                <button class="quiet-button" id="download" disabled type="button">
+                  Export JSON <span aria-hidden="true">↓</span>
+                </button>
+              </div>
+              <div class="register-toolbar">
+                <div class="filters" role="group" aria-label="Filter event outcome">
+                  <button type="button" data-filter="all" aria-pressed="true">All</button
+                  ><button type="button" data-filter="exception" aria-pressed="false">
+                    Needs review</button
+                  ><button type="button" data-filter="matched" aria-pressed="false">Matched</button
+                  ><button type="button" data-filter="ignored" aria-pressed="false">Ignored</button>
+                </div>
+                <label class="search-label"
+                  ><span class="sr-only">Search event or order</span
+                  ><input
+                    id="search"
+                    type="search"
+                    maxlength="100"
+                    placeholder="Find order or event…"
+                /></label>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <caption class="sr-only">
+                    Fictional commerce events. Select an event to inspect its source comparison.
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Order / event</th>
+                      <th scope="col">Sequence</th>
+                      <th scope="col">Outcome</th>
+                      <th scope="col">Reason</th>
+                    </tr>
+                  </thead>
+                  <tbody id="event-rows"></tbody>
+                </table>
+              </div>
+              <div class="empty" id="empty" hidden>
+                <strong>No events match this view.</strong>
+                <p>Try another search or outcome filter.</p>
+                <button type="button" id="clear">Clear filters</button>
+              </div>
+              <p class="register-footnote">
+                Counts describe fictional event rows, not unique orders or business performance.
+              </p>
+            </div>
+            <aside class="inspector" aria-labelledby="inspector-title">
+              <div class="inspector-top">
+                <span class="eyebrow">Source comparison</span
+                ><span id="selected-outcome" class="pill">Select a row</span>
+              </div>
+              <h3 id="inspector-title">Inspect an event</h3>
+              <p id="inspector-subtitle">Select a row from the register.</p>
+              <div id="issue-explanation" class="issue-explanation"></div>
+              <div id="comparison"></div>
+              <details class="payload-details">
+                <summary>Inspect the event payload</summary>
+                <pre id="event-payload">{}</pre>
+              </details>
+              <p class="inspector-note">
+                The source snapshot remains intact. A match is evidence of field agreement, not
+                approval to charge, refund or update an order.
+              </p>
+            </aside>
+          </div>
+          <div class="evidence-strip">
+            <div>
+              <span class="mini-label">Reproducible report</span
+              ><code id="report-hash">Waiting for SHA-256…</code>
+            </div>
+            <div>
+              <span class="mini-label">Source snapshot</span
+              ><code id="source-hash">Waiting for SHA-256…</code>
+            </div>
+            <p>
+              Hashes identify these exact values. They are not digital signatures or proof that an
+              external source is truthful.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="engineering" id="engineering" aria-labelledby="engineering-title">
+        <div class="engineering-heading">
+          <p class="eyebrow">02 / Built with clear boundaries</p>
+          <h2 id="engineering-title">Small surface.<br />Inspectable decisions.</h2>
+          <p>
+            An original plugin, a reusable PHP core and a custom WordPress theme. Each layer has a
+            specific responsibility.
+          </p>
+        </div>
+        <div class="engineering-cards">
+          <article>
+            <span>01</span>
+            <h3>Reconcile precisely</h3>
+            <p>
+              Compare integer minor-unit amounts, currency, references and status without silent
+              coercion. Conflicting event IDs and ambiguous sequences remain visible.
+            </p>
+            <a
+              href="https://github.com/dhrubasuz/commerce-reconcile/blob/main/docs/core-contract.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Read the rule contract ↗</a
+            >
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Keep the adapter controlled</h3>
+            <p>
+              The WordPress REST route checks a capability and nonce. Its WooCommerce adapter reads
+              bounded, exact order IDs. It does not write orders or contact a payment provider.
+            </p>
+            <a href="downloads/commerce-reconcile-plugin.zip">Download the plugin ↓</a>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Design the whole experience</h3>
+            <p>
+              Commerce Canvas pairs an original responsive theme with an illustrated fictional
+              catalogue, a visual identity and a documented brand system.
+            </p>
+            <a href="theme/preview/">Explore the theme ↗</a
+            ><a href="brand/index.html">View the brand guide ↗</a
+            ><a href="downloads/commerce-canvas-theme.zip">Download the theme ↓</a>
+          </article>
+        </div>
+        <details class="verification-notes">
+          <summary>What this demonstration verifies—and where it stops</summary>
+          <p>
+            This public page calls the same pure PHP engine included in the WordPress plugin. Each
+            request analyses a fixed fictional scenario. The public endpoint accepts no arbitrary
+            payload, URL, credentials or real order information; it stores no review state.
+          </p>
+          <p>
+            Exact replay checks use an explicitly supplied prior ledger. The engine’s sequence
+            watermark records observed admissible events; it does not prove an order was applied.
+            The plugin’s WordPress/WooCommerce verification and release evidence are documented
+            separately in the repository. No production qualification or WordPress.org directory
+            approval is claimed.
+          </p>
+          <p>
+            GPL-2.0-or-later. WordPress and WooCommerce names identify integration targets; this
+            independent project is not affiliated with their maintainers.
+          </p>
+        </details>
+      </section>
+    </main>
+    <footer>
+      <span>Designed &amp; developed by <strong>Dhruba Poudel</strong></span
+      ><a href="https://about.dhrub.com.np/">Back to the portfolio ↗</a
+      ><span>Fictional records · Original implementation · Clear scope</span>
+    </footer>
+  </body>
+</html>

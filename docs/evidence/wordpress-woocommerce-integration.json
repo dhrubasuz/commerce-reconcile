@@ -1,0 +1,71 @@
+{
+    "author": "Dhruba Poudel",
+    "status": "PASS",
+    "runtime": {
+        "php": "8.5.12",
+        "wordpress": "7.1.3",
+        "woocommerce": "11.2.1"
+    },
+    "scope": "Real local WordPress REST dispatch, permissions/nonces, admin markup and optional real WooCommerce CRUD reads. HTTP login/cookie flow, browser admin interaction and production compatibility are separate checks.",
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "cleanup": {
+        "users": "PASS",
+        "orders": "PASS"
+    },
+    "checks": [
+        {
+            "name": "the plugin registers a real POST REST route with its permission callback",
+            "status": "PASS"
+        },
+        {
+            "name": "anonymous WordPress REST dispatch cannot review snapshots",
+            "status": "PASS"
+        },
+        {
+            "name": "a real subscriber nonce does not substitute for the required capability",
+            "status": "PASS"
+        },
+        {
+            "name": "a capable administrator without a nonce is rejected",
+            "status": "PASS"
+        },
+        {
+            "name": "a capable administrator with an invalid nonce is rejected",
+            "status": "PASS"
+        },
+        {
+            "name": "actual WordPress admin REST returns the reviewed baseline report",
+            "status": "PASS"
+        },
+        {
+            "name": "actual WordPress dispatch reproduces the same report on retry",
+            "status": "PASS"
+        },
+        {
+            "name": "WordPress dispatch rejects an arbitrary remote-URL field",
+            "status": "PASS"
+        },
+        {
+            "name": "actual WordPress dispatch rejects JSON objects where order/event lists are required",
+            "status": "PASS"
+        },
+        {
+            "name": "WordPress admin markup contains the sample and accessible output boundary",
+            "status": "PASS"
+        },
+        {
+            "name": "real WooCommerce adapter compares exact fictional IDs without saving orders",
+            "status": "PASS"
+        },
+        {
+            "name": "real WooCommerce path rejects caller-supplied order overrides",
+            "status": "PASS"
+        },
+        {
+            "name": "real shop manager can review and remains subject to nonce checks",
+            "status": "PASS"
+        }
+    ]
+}

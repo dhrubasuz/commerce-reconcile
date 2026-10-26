@@ -1,0 +1,53 @@
+name: PHP domain and adapter checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  php:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.1', '8.5']
+    container: php:${{ matrix.php }}-cli
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Lint PHP
+        run: find plugin tests scripts -name '*.php' -type f -print0 | xargs -0 -n1 php -l
+      - name: Verify domain and adapter contracts
+        run: php tests/run.php
+      - name: Verify public PHP demonstration
+        run: php tests/demo-endpoint.php
+  interface:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Install pinned development dependencies
+        run: npx --yes pnpm@11.25.0 install --frozen-lockfile --ignore-scripts
+      - name: Check PHP availability
+        run: php --version
+      - name: Verify PHP-backed interface and theme interactions
+        run: node --test tests/showcase.test.mjs theme/tests/interaction.test.mjs
+      - name: Check theme assets, fixtures and PHP
+        run: python3 theme/tools/check_theme.py --php php
+      - name: Check browser JavaScript syntax
+        run: |
+          node --check web/showcase.js
+          node --check theme/assets/main.js
+      - name: Build and verify the public package
+        run: |
+          python3 scripts/build_showcase.py --output release
+          python3 scripts/check_showcase.py --directory release

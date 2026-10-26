@@ -1,0 +1,401 @@
+{
+    "schema_version": 1,
+    "summary": {
+        "orders": 9,
+        "events": 14,
+        "matched": 3,
+        "exceptions": 9,
+        "ignored": 2
+    },
+    "rows": [
+        {
+            "event_id": "evt-match",
+            "order_id": 8101,
+            "reference": "DEMO-8101",
+            "disposition": "matched",
+            "issues": [],
+            "sequence": 1,
+            "external": {
+                "order_id": 8101,
+                "reference": "DEMO-8101",
+                "amount_minor": 12900,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-match",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8101,
+                "reference": "DEMO-8101",
+                "amount_minor": 12900,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        },
+        {
+            "event_id": "evt-amount",
+            "order_id": 8102,
+            "reference": "DEMO-8102",
+            "disposition": "exception",
+            "issues": [
+                "amount_mismatch"
+            ],
+            "sequence": 1,
+            "external": {
+                "order_id": 8102,
+                "reference": "DEMO-8102",
+                "amount_minor": 5990,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-amount",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8102,
+                "reference": "DEMO-8102",
+                "amount_minor": 4990,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        },
+        {
+            "event_id": "evt-currency",
+            "order_id": 8103,
+            "reference": "DEMO-8103",
+            "disposition": "exception",
+            "issues": [
+                "currency_mismatch"
+            ],
+            "sequence": 1,
+            "external": {
+                "order_id": 8103,
+                "reference": "DEMO-8103",
+                "amount_minor": 7800,
+                "currency": "USD",
+                "status": "processing",
+                "event_id": "evt-currency",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8103,
+                "reference": "DEMO-8103",
+                "amount_minor": 7800,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        },
+        {
+            "event_id": "evt-reference",
+            "order_id": 8104,
+            "reference": "OTHER-8104",
+            "disposition": "exception",
+            "issues": [
+                "reference_mismatch"
+            ],
+            "sequence": 1,
+            "external": {
+                "order_id": 8104,
+                "reference": "OTHER-8104",
+                "amount_minor": 3500,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-reference",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8104,
+                "reference": "DEMO-8104",
+                "amount_minor": 3500,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        },
+        {
+            "event_id": "evt-status",
+            "order_id": 8105,
+            "reference": "DEMO-8105",
+            "disposition": "exception",
+            "issues": [
+                "status_mismatch"
+            ],
+            "sequence": 1,
+            "external": {
+                "order_id": 8105,
+                "reference": "DEMO-8105",
+                "amount_minor": 8900,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-status",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8105,
+                "reference": "DEMO-8105",
+                "amount_minor": 8900,
+                "currency": "AUD",
+                "status": "completed"
+            }
+        },
+        {
+            "event_id": "evt-duplicate",
+            "order_id": 8106,
+            "reference": "DEMO-8106",
+            "disposition": "matched",
+            "issues": [],
+            "sequence": 1,
+            "external": {
+                "order_id": 8106,
+                "reference": "DEMO-8106",
+                "amount_minor": 2100,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-duplicate",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8106,
+                "reference": "DEMO-8106",
+                "amount_minor": 2100,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        },
+        {
+            "event_id": "evt-duplicate",
+            "order_id": 8106,
+            "reference": "DEMO-8106",
+            "disposition": "ignored",
+            "issues": [
+                "duplicate_event"
+            ],
+            "sequence": 1,
+            "external": {
+                "order_id": 8106,
+                "reference": "DEMO-8106",
+                "amount_minor": 2100,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-duplicate",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8106,
+                "reference": "DEMO-8106",
+                "amount_minor": 2100,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        },
+        {
+            "event_id": "evt-new",
+            "order_id": 8107,
+            "reference": "DEMO-8107",
+            "disposition": "matched",
+            "issues": [],
+            "sequence": 2,
+            "external": {
+                "order_id": 8107,
+                "reference": "DEMO-8107",
+                "amount_minor": 11900,
+                "currency": "AUD",
+                "status": "completed",
+                "event_id": "evt-new",
+                "sequence": 2,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8107,
+                "reference": "DEMO-8107",
+                "amount_minor": 11900,
+                "currency": "AUD",
+                "status": "completed"
+            }
+        },
+        {
+            "event_id": "evt-old",
+            "order_id": 8107,
+            "reference": "DEMO-8107",
+            "disposition": "ignored",
+            "issues": [
+                "stale_event"
+            ],
+            "sequence": 1,
+            "external": {
+                "order_id": 8107,
+                "reference": "DEMO-8107",
+                "amount_minor": 11900,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-old",
+                "sequence": 1,
+                "occurred_at": "2026-10-26T23:59:00Z"
+            },
+            "order": {
+                "order_id": 8107,
+                "reference": "DEMO-8107",
+                "amount_minor": 11900,
+                "currency": "AUD",
+                "status": "completed"
+            }
+        },
+        {
+            "event_id": "evt-conflict",
+            "order_id": 8108,
+            "reference": "DEMO-8108",
+            "disposition": "exception",
+            "issues": [
+                "event_id_conflict"
+            ],
+            "sequence": 1,
+            "external": {
+                "order_id": 8108,
+                "reference": "DEMO-8108",
+                "amount_minor": 6500,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-conflict",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8108,
+                "reference": "DEMO-8108",
+                "amount_minor": 6500,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        },
+        {
+            "event_id": "evt-conflict",
+            "order_id": 8108,
+            "reference": "DEMO-8108",
+            "disposition": "exception",
+            "issues": [
+                "event_id_conflict"
+            ],
+            "sequence": 1,
+            "external": {
+                "order_id": 8108,
+                "reference": "DEMO-8108",
+                "amount_minor": 6600,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-conflict",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8108,
+                "reference": "DEMO-8108",
+                "amount_minor": 6500,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        },
+        {
+            "event_id": "evt-missing",
+            "order_id": 8109,
+            "reference": "DEMO-8109",
+            "disposition": "exception",
+            "issues": [
+                "missing_order"
+            ],
+            "sequence": 1,
+            "external": {
+                "order_id": 8109,
+                "reference": "DEMO-8109",
+                "amount_minor": 2400,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-missing",
+                "sequence": 1,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": null
+        },
+        {
+            "event_id": "evt-sequence-a",
+            "order_id": 8110,
+            "reference": "DEMO-8110",
+            "disposition": "exception",
+            "issues": [
+                "sequence_conflict"
+            ],
+            "sequence": 2,
+            "external": {
+                "order_id": 8110,
+                "reference": "DEMO-8110",
+                "amount_minor": 4200,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-sequence-a",
+                "sequence": 2,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8110,
+                "reference": "DEMO-8110",
+                "amount_minor": 4200,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        },
+        {
+            "event_id": "evt-sequence-b",
+            "order_id": 8110,
+            "reference": "DEMO-8110",
+            "disposition": "exception",
+            "issues": [
+                "sequence_conflict"
+            ],
+            "sequence": 2,
+            "external": {
+                "order_id": 8110,
+                "reference": "DEMO-8110",
+                "amount_minor": 4200,
+                "currency": "AUD",
+                "status": "processing",
+                "event_id": "evt-sequence-b",
+                "sequence": 2,
+                "occurred_at": "2026-10-27T00:00:00Z"
+            },
+            "order": {
+                "order_id": 8110,
+                "reference": "DEMO-8110",
+                "amount_minor": 4200,
+                "currency": "AUD",
+                "status": "processing"
+            }
+        }
+    ],
+    "ledger": {
+        "evt-amount": "dbf17ad9530c8bfefd3668e4fbeb71df2c5880726d26acd44a83efd46b44711c",
+        "evt-currency": "876d638ac17b08bac7ab40644d5ab56c722e10a28e345f53e127d40a168b9561",
+        "evt-duplicate": "369acdcd9df1582baf06019e63f91dc2b03dd3f677bd37d34e7d296e55c36813",
+        "evt-match": "3300b7190638770f809b8468119261e188bae8b2c42170d94082fb8d4288d8db",
+        "evt-missing": "d320e6bd1d326a127cfed1ad366f05915ab4998da8418311cdc2cbdb750cbb15",
+        "evt-new": "7ea0c860b679ce97807d26459daf219c14e2086ffb4d8dc8f66b93a8dc0b7aac",
+        "evt-old": "a2891cc2f403fefaa36685b8d7da9871d88f1cac7728f8592acf5d1448d72357",
+        "evt-reference": "1406f205be88322d81808e587e30948aff9da93602c582a65f42f1918cb25656",
+        "evt-status": "2836c4207746e5b718a3da6ab6b0c677109a32bcc694e32efd7710d6cc0685d0"
+    },
+    "latest_sequences": {
+        "8101": 1,
+        "8102": 1,
+        "8103": 1,
+        "8104": 1,
+        "8105": 1,
+        "8106": 1,
+        "8107": 2,
+        "8109": 1,
+        "8110": 2
+    },
+    "report_hash": "f778c64d0541de0819a75943446aaa1a3de779eec274df32c1b09e70482879b9"
+}

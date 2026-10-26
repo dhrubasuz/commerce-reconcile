@@ -1,0 +1,24 @@
+{
+    "author": "Dhruba Poudel",
+    "creator": "Dhruba Poudel",
+    "last_modified_by": "Dhruba Poudel",
+    "component": "Commerce Canvas",
+    "wordpress": "7.1.3",
+    "woocommerce": "11.2.1",
+    "php": "8.5.12",
+    "scope": "Real local WordPress/WooCommerce; temporary fictional product fixtures; one prepared mix before the helper static cache is populated.",
+    "checks_passed": [
+        "Six visible published products returned with fifteen newer hidden, two search-only and one draft fixture excluded; catalogue-only product retained.",
+        "A hostile title saved through WordPress is rendered as expected visible text after stored-entity normalisation, without script elements or event-handler attributes.",
+        "The helper itself escapes an unsaved full hostile-title probe; that probe is never saved.",
+        "The real front-page template renders the WooCommerce catalogue, one main landmark, linked menu controls, the local stylesheet and the local interaction script.",
+        "The theme read/render phase produced zero mutations to order tables, posts or post metadata.",
+        "Order data fingerprint and count are unchanged after the run and fixture cleanup."
+    ],
+    "temporary_products_created": 26,
+    "temporary_product_cleanup_errors": [],
+    "theme_order_or_post_mutations": 0,
+    "order_snapshot_unchanged": true,
+    "existing_orders_observed": 0,
+    "status": "PASSED_REAL_WORDPRESS_WOOCOMMERCE_THEME_CHECKS"
+}

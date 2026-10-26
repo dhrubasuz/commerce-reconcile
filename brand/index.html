@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Dhruba Poudel" />
+    <meta name="creator" content="Dhruba Poudel" />
+    <meta name="last-modified-by" content="Dhruba Poudel" />
+    <meta
+      name="description"
+      content="The original Commerce Canvas visual identity and design guide by Dhruba Poudel. A fictional storefront study."
+    />
+    <meta name="theme-color" content="#173b32" />
+    <link rel="icon" type="image/svg+xml" href="../theme/assets/images/canvas-mark.svg" />
+    <title>Commerce Canvas — Brand & Design Guide by Dhruba Poudel</title>
+    <link rel="stylesheet" href="../theme/style.css" />
+    <style>
+      /* Original brand-guide layout. Author / Creator: Dhruba Poudel. GPL-2.0-or-later. */
+      .bg-header {
+        border-bottom: 1px solid var(--cc-line);
+      }
+      .bg-header .cc-wrap {
+        min-height: 95px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+      }
+      .bg-header a:last-child {
+        font-size: 0.72rem;
+      }
+      .bg-hero {
+        padding-block: 75px 60px;
+      }
+      .bg-hero h1 {
+        font: 400 clamp(3.6rem, 6vw, 6rem)/1 var(--cc-display);
+        letter-spacing: -0.07em;
+        margin-top: 24px;
+      }
+      .bg-hero h1 em {
+        font-weight: 400;
+      }
+      .bg-hero p {
+        margin-top: 25px;
+        max-width: 620px;
+        color: var(--cc-muted);
+        font-size: 0.92rem;
+      }
+      .bg-hero .bg-author {
+        font-size: 0.7rem;
+        color: var(--cc-ink);
+      }
+      .bg-nav {
+        display: flex;
+        gap: 10px 25px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--cc-line);
+        padding-top: 25px;
+        margin-top: 35px;
+        font-size: 0.7rem;
+      }
+      .bg-section {
+        padding-block: 55px;
+        border-top: 1px solid var(--cc-line);
+      }
+      .bg-section h2 {
+        margin-top: 15px;
+        font: 400 clamp(2.3rem, 4vw, 3.6rem)/1.05 var(--cc-display);
+        letter-spacing: -0.055em;
+      }
+      .bg-section-intro {
+        max-width: 720px;
+        margin-top: 22px;
+        color: var(--cc-muted);
+        font-size: 0.85rem;
+      }
+      .bg-logo-stage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 32px;
+      }
+      .bg-logo {
+        min-height: 225px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        border: 1px solid var(--cc-line);
+        background: var(--cc-white);
+      }
+      .bg-logo--dark {
+        background: var(--cc-forest);
+        color: var(--cc-paper);
+      }
+      .bg-logo > img {
+        width: 85px;
+        height: 85px;
+      }
+      .bg-logo .cc-brand-name {
+        font-size: 3.4rem;
+      }
+      .bg-logo small {
+        font-size: 0.59rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .bg-logo-lockup {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      .bg-logo-lockup img {
+        width: 62px;
+        height: 62px;
+      }
+      .bg-rules {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 25px;
+        margin-top: 26px;
+      }
+      .bg-rule {
+        border-top: 1px solid var(--cc-line);
+        padding-top: 18px;
+      }
+      .bg-rule h3 {
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      .bg-rule p {
+        color: var(--cc-muted);
+        font-size: 0.74rem;
+        margin-top: 10px;
+      }
+      .bg-palette {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .bg-swatch {
+        border: 1px solid var(--cc-line);
+      }
+      .bg-swatch-colour {
+        min-height: 125px;
+        background: var(--swatch);
+      }
+      .bg-swatch-copy {
+        padding: 15px 17px;
+      }
+      .bg-swatch-copy strong {
+        display: block;
+        font-size: 0.8rem;
+      }
+      .bg-swatch-copy code {
+        font-size: 0.7rem;
+      }
+      .bg-swatch-copy p {
+        font-size: 0.69rem;
+        color: var(--cc-muted);
+        margin-top: 8px;
+      }
+      .bg-contrast {
+        margin-top: 27px;
+        padding: 22px 25px;
+        border: 1px solid var(--cc-line);
+        font-size: 0.75rem;
+      }
+      .bg-contrast p + p {
+        margin-top: 8px;
+      }
+      .bg-type {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 50px;
+        margin-top: 30px;
+      }
+      .bg-type-sample {
+        padding: 32px;
+        border: 1px solid var(--cc-line);
+      }
+      .bg-type-sample .display-sample {
+        font: 400 clamp(2.6rem, 4vw, 4.5rem)/1 var(--cc-display);
+        letter-spacing: -0.06em;
+      }
+      .bg-type-sample .body-sample {
+        margin-top: 25px;
+        font: 400 1rem/1.75 var(--cc-body);
+        color: var(--cc-muted);
+      }
+      .bg-specs {
+        margin: 0;
+      }
+      .bg-specs div {
+        border-bottom: 1px solid var(--cc-line);
+        padding-block: 13px;
+      }
+      .bg-specs dt {
+        font-size: 0.72rem;
+        font-weight: 600;
+      }
+      .bg-specs dd {
+        margin: 4px 0 0;
+        color: var(--cc-muted);
+        font-size: 0.75rem;
+      }
+      .bg-grid-demo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .bg-grid-demo div {
+        min-height: 140px;
+        background: var(--cc-forest);
+        color: var(--cc-paper);
+        display: flex;
+        align-items: flex-end;
+        padding: 18px;
+        font-size: 0.64rem;
+      }
+      .bg-artwork {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 30px;
+      }
+      .bg-artwork img {
+        width: 100%;
+      }
+      .bg-foot {
+        color: var(--cc-paper);
+        background: var(--cc-forest);
+        margin-top: 30px;
+        padding-block: 40px;
+      }
+      .bg-foot .cc-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+      }
+      .bg-foot p {
+        font-size: 0.7rem;
+        max-width: 680px;
+      }
+      .bg-foot a {
+        font-size: 0.72rem;
+        white-space: nowrap;
+      }
+      @media (max-width: 800px) {
+        .bg-type {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        .bg-rules {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .bg-palette {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .bg-artwork {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 540px) {
+        .bg-header .cc-wrap {
+          min-height: 90px;
+          gap: 15px;
+        }
+        .bg-header .cc-brand-subtitle {
+          max-width: 120px;
+          font-size: 0.42rem;
+        }
+        .bg-header a:last-child {
+          font-size: 0.64rem;
+          max-width: 95px;
+          text-align: right;
+        }
+        .bg-hero {
+          padding-block: 45px;
+        }
+        .bg-hero h1 {
+          font-size: 3.6rem;
+        }
+        .bg-logo-stage {
+          grid-template-columns: 1fr;
+        }
+        .bg-palette {
+          gap: 12px;
+        }
+        .bg-swatch-copy {
+          padding: 12px;
+        }
+        .bg-swatch-colour {
+          min-height: 100px;
+        }
+        .bg-grid-demo {
+          gap: 10px;
+        }
+        .bg-grid-demo div {
+          padding: 10px;
+          min-height: 110px;
+        }
+        .bg-type-sample {
+          padding: 24px;
+        }
+        .bg-foot .cc-wrap {
+          display: block;
+        }
+        .bg-foot a {
+          display: inline-block;
+          margin-top: 23px;
+        }
+      }
+    </style>
+  </head>
+  <body id="top">
+    <a class="cc-skip" href="#main">Skip to content</a>
+    <header class="bg-header">
+      <div class="cc-wrap">
+        <a
+          class="cc-brand"
+          href="../theme/preview/index.html"
+          aria-label="Commerce Canvas storefront preview"
+          ><img src="../theme/assets/images/canvas-mark.svg" alt="" width="100" height="100" /><span
+            ><span class="cc-brand-name">canvas</span
+            ><span class="cc-brand-subtitle">Brand &amp; design guide / 1.0</span></span
+          ></a
+        ><a href="../theme/preview/index.html"
+          >View the storefront <span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </header>
+    <main class="cc-wrap" id="main">
+      <section class="bg-hero" aria-labelledby="brand-title">
+        <span class="cc-eyebrow">Commerce Canvas / Original identity study</span>
+        <h1 id="brand-title">One identity.<br /><em>Many useful details.</em></h1>
+        <p>
+          An editorial visual system for a fictional everyday-objects shop. A warm palette, a
+          compact geometric mark and clear product presentation connect the identity to a working
+          WordPress theme.
+        </p>
+        <p class="bg-author">
+          Designed and developed by <strong>Dhruba Poudel</strong> · Version 1.0
+        </p>
+        <nav class="bg-nav" aria-label="Brand guide sections">
+          <a href="#mark">The mark</a><a href="#colour">Colour</a><a href="#type">Typography</a
+          ><a href="#layout">Layout</a><a href="#artwork">Artwork</a
+          ><a href="#behaviour">Behaviour</a>
+        </nav>
+      </section>
+
+      <section class="bg-section" id="mark" aria-labelledby="mark-title">
+        <span class="cc-eyebrow">01 / A compact signature</span>
+        <h2 id="mark-title">Simple enough<br />to stay recognisable.</h2>
+        <p class="bg-section-intro">
+          The original mark combines a cropped canvas corner with an inset square. The open form
+          suggests composition and structure; the rounded field adds warmth. It is a design
+          exercise, not a claim of trademark registration.
+        </p>
+        <div class="bg-logo-stage">
+          <div class="bg-logo">
+            <img
+              src="../theme/assets/images/canvas-mark.svg"
+              alt="Commerce Canvas geometric mark"
+              width="100"
+              height="100"
+            /><small>Primary mark</small>
+          </div>
+          <div class="bg-logo bg-logo--dark">
+            <div class="bg-logo-lockup">
+              <img
+                src="../theme/assets/images/canvas-mark.svg"
+                alt=""
+                width="100"
+                height="100"
+              /><span class="cc-brand-name">canvas</span>
+            </div>
+            <small>Editorial wordmark lockup</small>
+          </div>
+        </div>
+        <div class="bg-rules">
+          <article class="bg-rule">
+            <h3>Give it room</h3>
+            <p>
+              Leave clear space of at least one quarter of the mark's height around the signature.
+              Avoid placing text or product detail against its edges.
+            </p>
+          </article>
+          <article class="bg-rule">
+            <h3>Keep its proportions</h3>
+            <p>
+              Use the supplied SVG at its natural square ratio. Do not stretch, add a shadow or
+              change the relationship between the two internal shapes.
+            </p>
+          </article>
+          <article class="bg-rule">
+            <h3>Use a quiet field</h3>
+            <p>
+              Place the mark on cream, white or forest. At small sizes, use the symbol alone and
+              retain a minimum rendered height of 24 CSS pixels.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-section" id="colour" aria-labelledby="colour-title">
+        <span class="cc-eyebrow">02 / Warmth with structure</span>
+        <h2 id="colour-title">A small palette.<br />A clear role for each colour.</h2>
+        <p class="bg-section-intro">
+          Forest provides structure, cream provides space and terracotta provides a small point of
+          energy. Accent orange belongs in illustrations and decorative elements; the darker orange
+          supports readable links and labels.
+        </p>
+        <div class="bg-palette">
+          <article class="bg-swatch">
+            <div class="bg-swatch-colour" style="--swatch: #173b32"></div>
+            <div class="bg-swatch-copy">
+              <strong>Forest</strong><code>#173B32</code>
+              <p>Primary actions, deep fields and strong structure.</p>
+            </div>
+          </article>
+          <article class="bg-swatch">
+            <div class="bg-swatch-colour" style="--swatch: #f5f1e9"></div>
+            <div class="bg-swatch-copy">
+              <strong>Paper</strong><code>#F5F1E9</code>
+              <p>Main canvas and reversed text on forest.</p>
+            </div>
+          </article>
+          <article class="bg-swatch">
+            <div class="bg-swatch-colour" style="--swatch: #d3673c"></div>
+            <div class="bg-swatch-copy">
+              <strong>Terracotta</strong><code>#D3673C</code>
+              <p>Illustration, brand mark and decorative accents.</p>
+            </div>
+          </article>
+          <article class="bg-swatch">
+            <div class="bg-swatch-colour" style="--swatch: #202e27"></div>
+            <div class="bg-swatch-copy">
+              <strong>Ink</strong><code>#202E27</code>
+              <p>Headings and primary body text.</p>
+            </div>
+          </article>
+          <article class="bg-swatch">
+            <div class="bg-swatch-colour" style="--swatch: #5d675e"></div>
+            <div class="bg-swatch-copy">
+              <strong>Quiet green</strong><code>#5D675E</code>
+              <p>Supporting copy and secondary information.</p>
+            </div>
+          </article>
+          <article class="bg-swatch">
+            <div class="bg-swatch-colour" style="--swatch: #a24327"></div>
+            <div class="bg-swatch-copy">
+              <strong>Burnt orange</strong><code>#A24327</code>
+              <p>Text accents and focus indicators on paper.</p>
+            </div>
+          </article>
+        </div>
+        <div class="bg-contrast">
+          <p>
+            <strong>Functional pairings:</strong> ink on paper, quiet green on paper, paper on
+            forest and burnt orange on paper.
+          </p>
+          <p>
+            Text must remain readable without colour alone. Category choices also change shape and
+            pressed state; disclosure controls include a visible symbol and native expanded state.
+            Complete accessibility conformance still requires a broader audit.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-section" id="type" aria-labelledby="type-title">
+        <span class="cc-eyebrow">03 / Editorial, then practical</span>
+        <h2 id="type-title">Personality in the heading.<br />Clarity in the detail.</h2>
+        <div class="bg-type">
+          <div class="bg-type-sample">
+            <p class="display-sample">Everyday,<br /><em>considered.</em></p>
+            <p class="body-sample">
+              A useful object needs room to be understood. The interface gives product names, prices
+              and descriptions a consistent place.
+            </p>
+          </div>
+          <dl class="bg-specs">
+            <div>
+              <dt>Display</dt>
+              <dd>
+                Georgia, followed by Times New Roman and the system serif fallback. Regular weight,
+                tight tracking and short lines.
+              </dd>
+            </div>
+            <div>
+              <dt>Body and controls</dt>
+              <dd>
+                The platform system sans stack: -apple-system, BlinkMacSystemFont, Segoe UI, Arial
+                and sans-serif.
+              </dd>
+            </div>
+            <div>
+              <dt>Product hierarchy</dt>
+              <dd>
+                Serif name, compact price, muted description and a separate detail disclosure. Each
+                has a distinct visual role.
+              </dd>
+            </div>
+            <div>
+              <dt>Runtime</dt>
+              <dd>
+                Fonts are provided by the device. There is no external font request or bundled
+                third-party font licence.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="bg-section" id="layout" aria-labelledby="layout-title">
+        <span class="cc-eyebrow">04 / A responsive frame</span>
+        <h2 id="layout-title">Let the composition<br />follow the available space.</h2>
+        <p class="bg-section-intro">
+          The wide layout pairs an editorial introduction with a still life. Products use three
+          columns above 800 pixels, two at 800 pixels and below, then one at 540 pixels and below.
+          Content remains in reading order as it stacks.
+        </p>
+        <div class="bg-grid-demo" aria-label="Illustration of a three-column product grid">
+          <div>01 / Product</div>
+          <div>02 / Product</div>
+          <div>03 / Product</div>
+        </div>
+        <div class="bg-rules">
+          <article class="bg-rule">
+            <h3>Keep a consistent edge</h3>
+            <p>
+              A shared content width and aligned headings connect the hero, catalogue, story and
+              theme notes. The desktop maximum is 1,320 CSS pixels.
+            </p>
+          </article>
+          <article class="bg-rule">
+            <h3>Use room deliberately</h3>
+            <p>
+              Selected spacing values include 20, 28, 40, 64 and 88 pixels. Compact labels sit close
+              to the content they describe; section changes get more space.
+            </p>
+          </article>
+          <article class="bg-rule">
+            <h3>Protect the small screen</h3>
+            <p>
+              Long product labels wrap, cards become one column and the menu becomes an explicit
+              toggle. Avoid fixed content heights that could clip translated or enlarged text.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-section" id="artwork" aria-labelledby="artwork-title">
+        <span class="cc-eyebrow">05 / Original illustration</span>
+        <h2 id="artwork-title">A shared visual language,<br />from mark to object.</h2>
+        <p class="bg-section-intro">
+          The product artwork is composed from original vector geometry, local gradients and a
+          restrained palette. It shows form without implying real manufacturing specifications,
+          product certification or purchasing availability.
+        </p>
+        <div class="bg-artwork">
+          <img
+            src="../theme/assets/images/ridge-cup.svg"
+            alt="Original fictional Ridge cup illustration"
+            width="680"
+            height="680"
+            loading="lazy"
+          /><img
+            src="../theme/assets/images/loop-lamp.svg"
+            alt="Original fictional Loop lamp illustration"
+            width="680"
+            height="680"
+            loading="lazy"
+          /><img
+            src="../theme/assets/images/fold-tote.svg"
+            alt="Original fictional Fold tote illustration"
+            width="680"
+            height="680"
+            loading="lazy"
+          /><img
+            src="../theme/assets/images/plain-notebook.svg"
+            alt="Original fictional Plain notebook illustration"
+            width="680"
+            height="680"
+            loading="lazy"
+          />
+        </div>
+        <p class="bg-section-intro">
+          Every SVG includes Dhruba Poudel as its internal creator. Original code, design and
+          bundled artwork are GPL-2.0-or-later; WordPress and WooCommerce retain their own licences
+          and trademarks.
+        </p>
+      </section>
+
+      <section class="bg-section" id="behaviour" aria-labelledby="behaviour-title">
+        <span class="cc-eyebrow">06 / Details that behave</span>
+        <h2 id="behaviour-title">Make each interaction<br />easy to understand.</h2>
+        <div class="bg-rules">
+          <article class="bg-rule">
+            <h3>Progressive navigation</h3>
+            <p>
+              Links remain present without JavaScript. The enhanced small-screen menu exposes its
+              expanded state and can be closed with Escape, returning focus to its toggle.
+            </p>
+          </article>
+          <article class="bg-rule">
+            <h3>Native product detail</h3>
+            <p>
+              The sample catalogue uses HTML details and summary. Filters announce the visible count
+              and keep the selected category's pressed state explicit.
+            </p>
+          </article>
+          <article class="bg-rule">
+            <h3>Respect reduced motion</h3>
+            <p>
+              A subtle image hover is decorative. A reduced-motion preference removes the transform
+              transition and smooth scrolling.
+            </p>
+          </article>
+        </div>
+        <div class="cc-preview-status">
+          <span class="cc-status-mark" aria-hidden="true">i</span>
+          <p>
+            <strong>A fictional brand and an original implementation study.</strong>This guide
+            describes the identity and theme components. It does not claim client adoption, measured
+            commercial results, trademark registration, WordPress directory acceptance or complete
+            accessibility certification.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-foot">
+      <div class="cc-wrap">
+        <p>
+          Commerce Canvas · Original identity, theme, code and illustrations by
+          <strong>Dhruba Poudel</strong>.<br />Fictional sample storefront · GPL-2.0-or-later.
+        </p>
+        <a href="../theme/preview/index.html"
+          >Explore the storefront <span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

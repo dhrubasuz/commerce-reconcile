@@ -1,0 +1,42 @@
+{
+  "author": "Dhruba Poudel",
+  "creator": "Dhruba Poudel",
+  "last_modified_by": "Dhruba Poudel",
+  "date": "2026-10-27",
+  "component": "Commerce Reconcile PHP domain and WordPress/WooCommerce adapter",
+  "local_runtime": "Official PHP 8.5.12 NTS x64 portable runtime, vendor SHA-256 verified by project owner",
+  "tests": {
+    "command": "php tests/run.php",
+    "passed": 31,
+    "failed": 0
+  },
+  "php_syntax": {
+    "files_checked": 11,
+    "result": "PASS"
+  },
+  "admin_javascript_syntax": "PASS: node --check plugin/commerce-reconcile/assets/admin.js",
+  "golden_fixture": {
+    "orders": 9,
+    "events": 14,
+    "matched": 3,
+    "exceptions": 9,
+    "ignored": 2,
+    "report_hash": "f778c64d0541de0819a75943446aaa1a3de779eec274df32c1b09e70482879b9"
+  },
+  "scope": "Standalone domain behaviour and adapter contracts using explicit WordPress/WooCommerce test doubles. Tests do not establish a real WordPress integration, HPOS/legacy compatibility matrix or production qualification.",
+  "wordPress_runtime_integration": "PASS: separate actual WordPress/WooCommerce record in evidence/wordpress-woocommerce-integration.json; actual local browser login/cookie/nonce flow recorded in release-verification.json.",
+  "source_references": [
+    "https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/",
+    "https://developer.wordpress.org/apis/security/nonces/",
+    "https://developer.woocommerce.com/docs/features/orders/wc-get-orders/",
+    "https://woocommerce.github.io/code-reference/files/woocommerce-includes-wc-order-functions.html#function_wc_get_order"
+  ],
+  "license_source": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt",
+  "license": "GPL-2.0-or-later",
+  "notes": [
+    "Original code and fictional records by Dhruba Poudel.",
+    "GPL licence text copied unchanged from the official GNU source.",
+    "No remote provider calls, real payment actions, order mutations, credentials or customer contact fields.",
+    "Container CI matrix declares PHP 8.1 and 8.5; actual hosted results must be verified after publication."
+  ]
+}

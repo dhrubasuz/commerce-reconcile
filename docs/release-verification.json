@@ -1,0 +1,96 @@
+{
+  "author": "Dhruba Poudel",
+  "creator": "Dhruba Poudel",
+  "last_modified_by": "Dhruba Poudel",
+  "release": "1.0.0",
+  "date": "2026-10-27",
+  "status": "LOCAL_RELEASE_GATES_PASSED_HOSTED_VERIFICATION_PENDING",
+  "standalone_php": {
+    "runtime": "8.5.12",
+    "checks": 31,
+    "passed": 31,
+    "scope": "Pure domain rules and WordPress/WooCommerce adapter doubles, including genuine no-Woo fallback child process."
+  },
+  "public_php_endpoint": {
+    "checks": 13,
+    "passed": 13,
+    "scope": "Isolated actual PHP endpoint execution; four fixed scenarios, source immutability and bounded input/method."
+  },
+  "interface": {
+    "checks": 13,
+    "passed": 13,
+    "scope": "Actual PHP fixture envelopes with simulated DOM/fetch; timeout, stale reply, filters, aligned inspector, error recovery and export."
+  },
+  "theme_interactions": {
+    "checks": 8,
+    "passed": 8,
+    "scope": "Simulated DOM menu, Escape/focus, category filtering, disclosures and fixture controls."
+  },
+  "real_wordpress_without_woocommerce": {
+    "wordpress": "7.1.3",
+    "php": "8.5.12",
+    "passed": 10,
+    "failed": 0,
+    "skipped": 1,
+    "scope": "Actual WordPress REST dispatch/capabilities/nonces/admin markup. Woo-specific group skipped because WooCommerce was absent."
+  },
+  "real_wordpress_woocommerce": {
+    "wordpress": "7.1.3",
+    "woocommerce": "11.2.1",
+    "php": "8.5.12",
+    "database_adapter": "SQLite Database Integration 3.1.1",
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "evidence/wordpress-woocommerce-integration.json",
+    "scope": "Actual REST, exact fictional order reads, source equality, no order-write hooks and fixture cleanup."
+  },
+  "real_theme": {
+    "passed_groups": 6,
+    "evidence": "evidence/theme-wordpress-integration.json",
+    "scope": "26 disposable products; hidden/search/draft exclusion, catalogue-only inclusion, stored and raw hostile-title escaping, real template/assets, no read/render mutations and cleanup."
+  },
+  "browser": {
+    "scope": "Internal browser against local PHP and WordPress servers.",
+    "checks": [
+      "Real local WordPress login and cookie/nonce admin POST rendered 14 baseline rows and the golden hash.",
+      "Four public PHP scenarios produced their expected counts.",
+      "Native browser JSON download contained 14 baseline rows and the golden hash.",
+      "Theme category filter returned one carry object and restored all six.",
+      "1280px desktop and 390px mobile had no page overflow.",
+      "Mobile Menu/Escape returned focus and collapsed navigation."
+    ],
+    "evidence_images": [
+      "evidence/reconcile-desktop.png",
+      "evidence/reconcile-mobile.png",
+      "evidence/wordpress-admin-review.png",
+      "evidence/canvas-desktop.png",
+      "evidence/canvas-mobile.png"
+    ]
+  },
+  "independent_review": {
+    "status": "All reproduced findings fixed and independently rechecked",
+    "repairs": [
+      "JSON objects now rejected where arrays are required.",
+      "Public hung request now has a 15-second deadline and usable retry.",
+      "Filtering keeps inspector within the visible register.",
+      "Theme visibility filtering occurs before the product result limit."
+    ]
+  },
+  "test_correction": "The real-theme stored-title assertion was corrected to compare visible DOM text with one entity decode of the actual WordPress-stored title. Strict no-script/no-event-handler checks and the unsaved full hostile-title probe remain unchanged.",
+  "environment_setup": "WooCommerce tables and roles were explicitly installed in the disposable environment after activation. Initial missing-table/role setup errors were corrected before runtime checks; no production site was involved.",
+  "baseline": {
+    "orders": 9,
+    "event_rows": 14,
+    "matched": 3,
+    "exception_rows": 9,
+    "ignored": 2,
+    "report_sha256": "f778c64d0541de0819a75943446aaa1a3de779eec274df32c1b09e70482879b9"
+  },
+  "limits": [
+    "Synthetic counts are not business savings or commercial accuracy.",
+    "Public PHP demo is separate from WordPress; theme link is a static preview.",
+    "No durable webhook ledger, order application or payment processing.",
+    "No exhaustive security/accessibility certification, production qualification, all database/HPOS combinations or WordPress.org directory approval."
+  ]
+}
